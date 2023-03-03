@@ -1,13 +1,13 @@
 import StatTitle from './Title';
 import StatList from './StatList/StatList';
-import data from '../../jsonData/data.json';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-function Statistics() {
+function Statistics({ title, stats }) {
   return (
     <Container>
-      <StatTitle titleText="Upload stats" />
-      <StatList data={data} />
+      <StatTitle titleText={title} />
+      <StatList data={stats} />
     </Container>
   );
 }
@@ -23,3 +23,8 @@ const Container = styled.section`
   overflow: hidden;
   padding-top: 20px;
 `;
+
+Statistics.propTypes = {
+  title: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};

@@ -24,9 +24,9 @@ export default Stats;
 
 Stats.propTypes = {
   stats: PropTypes.shape({
-    likes: PropTypes.number,
-    views: PropTypes.number,
-    followers: PropTypes.number,
+    likes: PropTypes.number.isRequired,
+    views: PropTypes.number.isRequired,
+    followers: PropTypes.number.isRequired,
   }).isRequired,
 };
 

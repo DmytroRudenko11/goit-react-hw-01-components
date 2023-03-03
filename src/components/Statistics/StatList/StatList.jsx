@@ -12,7 +12,12 @@ function StatList({ data }) {
   return (
     <List>
       {data.map(item => (
-        <StatItem key={item.id} color={getRandomHexColor()} data={item} />
+        <StatItem
+          key={item.id}
+          color={getRandomHexColor()}
+          label={item.label}
+          percentage={item.percentage}
+        />
       ))}
     </List>
   );

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import transactions from '../../jsonData/transactions.json';
+import PropTypes from 'prop-types';
 import TransHead from './TransHead/TransHead';
 import TransBody from './TransBody/TransBody';
 
-function TransactionHistory() {
+function TransactionHistory({ items }) {
   return (
     <Table>
       <TransHead />
-      <TransBody data={transactions} />
+      <TransBody data={items} />
     </Table>
   );
 }
@@ -21,3 +21,7 @@ const Table = styled.table`
   margin: 0 auto;
   margin-top: 100px;
 `;
+
+TransactionHistory.propTypes = {
+  items: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};

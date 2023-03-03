@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function StatItem({ data, color }) {
+function StatItem({ label, percentage, color }) {
   return (
     <Item color={color}>
-      <Text>{data.label}</Text>
-      <Text>{data.percentage}</Text>
+      <Text>{label}</Text>
+      <Text>{percentage}</Text>
     </Item>
   );
 }
@@ -14,7 +14,8 @@ export default StatItem;
 
 StatItem.propTypes = {
   color: PropTypes.string.isRequired,
-  // data: PropTypes.shape.isRequired,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
 };
 
 const Item = styled.li`

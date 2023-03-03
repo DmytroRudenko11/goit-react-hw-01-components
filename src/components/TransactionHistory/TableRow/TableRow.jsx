@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-function TableRow({ data }) {
-  const { type, amount, currency } = data;
-
+function TableRow({ type, amount, currency }) {
   return (
     <Row>
       <TableData>{type}</TableData>
@@ -14,14 +12,6 @@ function TableRow({ data }) {
 }
 
 export default TableRow;
-
-TableRow.propTypes = {
-  data: PropTypes.shape({
-    type: PropTypes.string,
-    amount: PropTypes.string,
-    currency: PropTypes.string,
-  }).isRequired,
-};
 
 const TableData = styled.td`
   border: 1px solid #ddd;
@@ -36,3 +26,9 @@ const Row = styled.tr`
     background-color: #ddd;
   }
 `;
+
+TableRow.propTypes = {
+  type: PropTypes.string,
+  amount: PropTypes.string,
+  currency: PropTypes.string,
+};

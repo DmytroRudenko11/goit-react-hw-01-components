@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import friends from '../../jsonData/friends.json';
+import PropTypes from 'prop-types';
 import FriendItem from './FriendItem';
 
-function FriendList() {
+function FriendList({ friends }) {
   return (
     <List>
       {friends.map(friend => (
@@ -27,3 +27,7 @@ const List = styled.ul`
   margin: 0 auto;
   margin-top: 100px;
 `;
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};

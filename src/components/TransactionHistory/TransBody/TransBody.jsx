@@ -5,7 +5,12 @@ function TransBody({ data }) {
   return (
     <tbody>
       {data.map(item => (
-        <TableRow key={item.id} data={item} />
+        <TableRow
+          key={item.id}
+          type={item.type}
+          amount={item.amount}
+          currency={item.currency}
+        />
       ))}
     </tbody>
   );

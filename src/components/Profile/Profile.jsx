@@ -1,19 +1,18 @@
 import Description from './Description/Description';
 import Stats from './Stats/Stats';
 import styled from 'styled-components';
-import user from '../../jsonData/user.json';
+import PropTypes from 'prop-types';
 
-function Profile() {
+function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfileContainer>
       <Description
-        username={user.username}
-        tag={user.tag}
-        location={user.location}
-        avatar={user.avatar}
-        stats={user.stats}
+        username={username}
+        tag={tag}
+        location={location}
+        avatar={avatar}
       />
-      <Stats stats={user.stats} />
+      <Stats stats={stats} />
     </ProfileContainer>
   );
 }
@@ -33,3 +32,11 @@ const ProfileContainer = styled.div`
 `;
 
 export default Profile;
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
+};

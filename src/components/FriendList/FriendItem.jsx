@@ -13,10 +13,10 @@ function FriendItem({ isOnline, name, avatar }) {
 
 export default FriendItem;
 
-FriendItem.propType = {
+FriendItem.propTypes = {
   isOnline: PropTypes.bool.isRequired,
   avatar: PropTypes.string.isRequired,
-  name: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 const Item = styled.li`
