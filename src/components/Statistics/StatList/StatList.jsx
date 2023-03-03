@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import StatItem from './StatItem';
+import PropTypes from 'prop-types';
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
@@ -23,3 +24,7 @@ const List = styled.ul`
   display: flex;
   width: 100%;
 `;
+
+StatList.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};

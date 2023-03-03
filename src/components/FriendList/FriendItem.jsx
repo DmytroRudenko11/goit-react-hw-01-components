@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function FriendItem({ isOnline, name, src }) {
+function FriendItem({ isOnline, name, avatar }) {
   return (
     <Item>
       <Online online={isOnline} />
-      <img src={src} alt={name} width="48" />
+      <img src={avatar} alt={name} width="48" />
       <p>{name}</p>
     </Item>
   );
@@ -14,9 +14,9 @@ function FriendItem({ isOnline, name, src }) {
 export default FriendItem;
 
 FriendItem.propType = {
-  isOnline: PropTypes.bool,
-  // avatar: PropTypes.string.isRequired,
-  name: PropTypes.number,
+  isOnline: PropTypes.bool.isRequired,
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.number.isRequired,
 };
 
 const Item = styled.li`

@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-}
-
 function StatItem({ data, color }) {
   return (
     <Item color={color}>
@@ -19,9 +13,8 @@ function StatItem({ data, color }) {
 export default StatItem;
 
 StatItem.propTypes = {
-  label: PropTypes.string,
-  percentage: PropTypes.string,
-  color: PropTypes.string,
+  color: PropTypes.string.isRequired,
+  // data: PropTypes.shape.isRequired,
 };
 
 const Item = styled.li`

@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-function Description(props) {
-  const { username, tag, location, avatar } = props;
-
+function Description({ username, tag, location, avatar }) {
   return (
     <DescriptionWrapper>
       <ImageProfile src={avatar} alt={username} />
@@ -45,8 +43,8 @@ const UserLocation = styled.p`
 export default Description;
 
 Description.propTypes = {
-  avatar: PropTypes.string,
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
 };

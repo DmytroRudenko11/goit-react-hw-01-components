@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 function Stats({ stats }) {
   return (
@@ -20,6 +21,14 @@ function Stats({ stats }) {
 }
 
 export default Stats;
+
+Stats.propTypes = {
+  stats: PropTypes.shape({
+    likes: PropTypes.number,
+    views: PropTypes.number,
+    followers: PropTypes.number,
+  }).isRequired,
+};
 
 const StatsList = styled.ul`
   font-family: Montserrat, sans-serif;
