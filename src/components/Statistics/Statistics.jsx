@@ -1,6 +1,6 @@
 import StatTitle from './Title';
 import StatList from './StatList/StatList';
-import data from '../../data.json';
+import data from '../../jsonData/data.json';
 import styled from 'styled-components';
 
 function Statistics() {

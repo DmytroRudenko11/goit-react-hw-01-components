@@ -1,15 +1,11 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-function FriendItem({ isOnline, name, avatar }) {
+function FriendItem({ isOnline, name, src }) {
   return (
     <Item>
       <Online online={isOnline} />
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1998/1998749.png"
-        alt={name}
-        width="48"
-      />
+      <img src={src} alt={name} width="48" />
       <p>{name}</p>
     </Item>
   );
@@ -20,7 +16,7 @@ export default FriendItem;
 FriendItem.propType = {
   isOnline: PropTypes.bool,
   // avatar: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  name: PropTypes.number,
 };
 
 const Item = styled.li`

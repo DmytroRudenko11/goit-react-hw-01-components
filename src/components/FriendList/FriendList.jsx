@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import friends from '../../friends.json';
+import friends from '../../jsonData/friends.json';
 import FriendItem from './FriendItem';
 
 function FriendList() {

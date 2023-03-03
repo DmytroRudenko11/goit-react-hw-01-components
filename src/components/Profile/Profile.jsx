@@ -1,7 +1,8 @@
 import Description from './Description/Description';
 import Stats from './Stats/Stats';
 import styled from 'styled-components';
-import user from '../../user.json';
+
+import user from '../../jsonData/user.json';
 
 function Profile() {
   return (
