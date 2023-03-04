@@ -25,7 +25,6 @@ const Item = styled.li`
   align-items: center;
   background-color: ${props => props.color};
 `;
-// ${(props) => props.topValue || 0}px;
 
 const Text = styled.span`
   color: white;

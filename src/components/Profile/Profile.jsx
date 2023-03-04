@@ -17,6 +17,20 @@ function Profile({ username, tag, location, avatar, stats }) {
   );
 }
 
+export default Profile;
+
+Profile.propTypes = {
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  stats: PropTypes.shape({
+    likes: PropTypes.number,
+    views: PropTypes.number,
+    followers: PropTypes.number,
+  }).isRequired,
+};
+
 const ProfileContainer = styled.div`
   width: 300px;
   height: 400px;
@@ -30,13 +44,3 @@ const ProfileContainer = styled.div`
   overflow: hidden;
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.75);
 `;
-
-export default Profile;
-
-Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
-  stats: PropTypes.objectOf(PropTypes.number).isRequired,
-};

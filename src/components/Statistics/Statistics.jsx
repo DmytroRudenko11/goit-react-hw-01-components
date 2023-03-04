@@ -1,18 +1,27 @@
-import StatTitle from './Title';
 import StatList from './StatList/StatList';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 function Statistics({ title, stats }) {
   return (
-    <Container>
-      <StatTitle titleText={title} />
+    <Container title={title}>
+      {title && <Title>{title}</Title>}
       <StatList data={stats} />
     </Container>
   );
 }
 
 export default Statistics;
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};
+
+const Title = styled.h2`
+  text-align: center;
+  margin-bottom: 20px;
+`;
 
 const Container = styled.section`
   width: 500px;
@@ -21,10 +30,5 @@ const Container = styled.section`
   border: 1px solid black;
   border-radius: 20px;
   overflow: hidden;
-  padding-top: 20px;
+  padding-top: ${p => (p.title ? '20px' : '0px')};
 `;
-
-Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
-  stats: PropTypes.arrayOf(PropTypes.shape).isRequired,
-};

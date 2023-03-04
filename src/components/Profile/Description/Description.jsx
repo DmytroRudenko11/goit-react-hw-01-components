@@ -12,6 +12,15 @@ function Description({ username, tag, location, avatar }) {
   );
 }
 
+export default Description;
+
+Description.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+};
+
 const DescriptionWrapper = styled.div`
   font-family: Oxygen, sans-serif;
   text-align: center;
@@ -39,12 +48,3 @@ const TagProfile = styled.p`
 const UserLocation = styled.p`
   color: gray;
 `;
-
-export default Description;
-
-Description.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-};

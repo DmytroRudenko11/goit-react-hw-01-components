@@ -31,5 +31,10 @@ const List = styled.ul`
 `;
 
 StatList.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

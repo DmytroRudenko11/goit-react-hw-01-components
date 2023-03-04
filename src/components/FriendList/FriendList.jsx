@@ -19,6 +19,16 @@ function FriendList({ friends }) {
 
 export default FriendList;
 
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      isOnline: PropTypes.bool,
+      avatar: PropTypes.string,
+      name: PropTypes.string,
+    })
+  ).isRequired,
+};
+
 const List = styled.ul`
   display: flex;
   flex-direction: column;
@@ -27,7 +37,3 @@ const List = styled.ul`
   margin: 0 auto;
   margin-top: 100px;
 `;
-
-FriendList.propTypes = {
-  friends: PropTypes.arrayOf(PropTypes.shape).isRequired,
-};
